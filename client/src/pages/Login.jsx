@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React, {useLayoutEffect} from 'react'
 import {useForm} from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { auth } from '../firebase/FirebaseAuth';
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { signInWithEmailAndPassword, onAuthStateChanged} from "firebase/auth";
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate,Link } from 'react-router-dom'
 import Button from '../components/Button/Button';
@@ -26,6 +26,7 @@ const Login = () => {
     
     const navigate = useNavigate()
     const {state,dispatch} = useOutletContext()
+
     
     const LoginSchema = yup.object().shape({
         email : yup.string().email("Use email format eg. work@mail.com").required("email is required"),
@@ -45,6 +46,7 @@ const Login = () => {
     
     return (
         <div>
+            <Link to='/home'><h1>home</h1></Link>
             <h1 className='text-3xl font-bold text-left dark:text-white'>Sign in to your account</h1>
                 <div className='my-6'>
                     <form onSubmit={handleSubmit(onSubmit)}>

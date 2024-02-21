@@ -33,7 +33,7 @@ function App() {
           },
           
           {
-            element: <RequireAuth/>,// this is a protected route
+            element: <RequireAuth/>, 
             children : [
                 {
                   path: '/home', 

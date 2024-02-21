@@ -11,7 +11,7 @@ import PostUser from './PostComponents/PostUser'
 
 const Post = ({children}) => {
     return (
-        <div className='cursor-pointer shadow-lg px-2 py-4 dark:shadow-indigo-900/10'>
+        <div className='cursor-pointer shadow-lg px-2 py-4 dark:bg-[#11161d]'>
             {children}
         </div>
     )

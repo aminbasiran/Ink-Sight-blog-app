@@ -12,15 +12,15 @@ const Header = ({children}) => {
 
     const handleTheme = () => {    
         if (state.isDarkMode === true) {
-            sessionStorage.setItem("dark", "false");
+            sessionStorage.setItem("dark", false);
             document.documentElement.classList.remove('dark')
-            dispatch({type:"SET_THEME",payload: {theme: false }})
+            dispatch({type:"SET_THEME",payload: {isDarkMode: false }})
         }
 
         else {
             sessionStorage.setItem("dark",true)
             document.documentElement.classList.add("dark")
-            dispatch({type:"SET_THEME",payload: {theme: true }})
+            dispatch({type:"SET_THEME",payload: {isDarkMode: true }})
         }
     }
 

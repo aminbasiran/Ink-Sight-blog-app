@@ -5,19 +5,7 @@ import { useLayoutEffect } from 'react';
 
 const LandingPage = () => {
 
-    const {state,dispatch} = useOutletContext()
-
-    useLayoutEffect(()=>{
-        if(JSON.parse(sessionStorage.getItem("dark")) === true){
-            document.documentElement.classList.add("dark")
-            dispatch({type:"SET_THEME", payload: {theme: true}})
-        }
     
-        else{
-            document.documentElement.classList.remove("dark")
-            dispatch({type:"SET_THEME", payload: {theme: false}})
-        }
-    },[])
 
 
 

@@ -30,6 +30,7 @@ const Home = () => {
                 <Header.Title>Trending</Header.Title>
                 <Link to="/user"><Header.Profile/></Link>
             </Header>
+            <Link to="/login"><h2>LOGIN</h2></Link>
             <div className='flex flex-col gap-7'>
                 {state.homePosts.map(post => <Link key={post.id} to={`/home/post/view/${post.id}`}>
                     <Post  key={post.id}>
